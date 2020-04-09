@@ -2,4 +2,6 @@ alias dps='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}
 alias vim='nvim'
 alias mongod-start='brew services run mongodb-community'
 alias mongod-stop='brew services stop mongodb-community'
-
+alias joke_icndb='wget "http://api.icndb.com/jokes/random" -qO- | jshon -e value -e joke -u | recode html'
+alias joke='if (( RANDOM % 2 )); then joke_icndb; else pyjoke; fi'
+alias dadjoke='curl -sS -w "\n" -H "Accept: text/plain" https://icanhazdadjoke.com'
