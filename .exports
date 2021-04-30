@@ -1,0 +1,25 @@
+# Golang
+export GOPATH=$HOME/go # don't forget to change your path correctly!
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+
+# General
+export EDITOR=vim
+export PATH="/usr/local/sbin:$PATH"
+export PATH="$HOME/.bin:$PATH"
+
+
+# hide ruby gems warning (t gem)
+export RUBYOPT=-W0
+
+# PHP
+export PATH="/usr/local/opt/php@7.4/bin:$PATH"
+
+# Configuration for composer
+export PATH="$PATH:$HOME/.composer/vendor/bin"
+
+# node nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
