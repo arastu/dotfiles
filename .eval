@@ -1,0 +1,17 @@
+# Load the theme.
+eval "$(starship init zsh)"
+
+# Fuck!
+eval "$(thefuck --alias)"
+
+# rbenv
+eval "$(rbenv init -)"
+
+# Rust cargo
+source $HOME/.cargo/env
+
+# pyenv
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+eval "$(pyenv virtualenv-init -)"

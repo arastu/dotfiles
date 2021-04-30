@@ -1,7 +1,37 @@
-alias dps='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}}"'
-alias vim='nvim'
-alias mongod-start='brew services run mongodb-community'
-alias mongod-stop='brew services stop mongodb-community'
 alias joke_icndb='wget "http://api.icndb.com/jokes/random" -qO- | jshon -e value -e joke -u | recode html'
 alias joke='if (( RANDOM % 2 )); then joke_icndb; else pyjoke; fi'
 alias dadjoke='curl -sS -w "\n" -H "Accept: text/plain" https://icanhazdadjoke.com'
+
+alias vim="nvim"
+alias cat="bat"
+alias t="tmux"
+alias ta="t a -t"
+alias tls="t ls"
+alias tn="t new -t"
+alias code-php="code --extensions-dir $HOME/.vscode/user-data/php/extensions --user-data-dir $HOME/.vscode/user-data/php/data"
+
+# Easier navigation: .., ..., ...., ....., ~ and -
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~" # `cd` is probably faster to type though
+alias -- -="cd -"
+
+# Shortcuts
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias w="cd ~/Workspace"
+alias g="git"
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
+alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+
+# docker
+alias d ="docker"
+alias dps='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}}"'
+alias dlg="docker logs -f"
+ 
+alias workon="pyenv activate"
