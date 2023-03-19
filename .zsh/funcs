@@ -1,0 +1,19 @@
+function fucker {
+	docker ps -a -q | xargs docker rm -f
+	docker images -a -q | xargs docker rmi -f
+	docker volume ls -q | xargs docker volume rm -f
+	docker network ls | xargs docker network rm
+	docker system prune -f
+}
+
+# Create a new directory and enter it
+function mkd() {
+	mkdir -p "$@" && cd "$_";
+}
+
+compresspdf() {
+	gs -dNOPAUSE -sDEVICE=jpeg -r"$2" -dJPEGQ="$3" -sOutputFile=/tmp/compresspdf-files-%02d.jpg "$1" -dBATCH
+	convert /tmp/compresspdf-files-*.jpg -auto-orient "$1"_compressed.pdf
+	rm -rf /tmp/compresspdf-files-*
+}
+

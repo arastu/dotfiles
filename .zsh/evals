@@ -1,0 +1,6 @@
+eval "$(/opt/homebrew/bin/brew shellenv)"
+# Load the theme.
+eval "$(starship init zsh)"
+# asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
